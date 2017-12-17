@@ -10,6 +10,7 @@ import TabsHeader from "../common/tab/tabs_header"
 import TabsContent from "../common/tab/tabs_content"
 import TabHeader from "../common/tab/tabheder"
 import TabContent from "../common/tab/tabContent"
+import List from "./billingCicleList"
 
 import { selectTab, showTabs } from "../common/tab/tabActions"
 
@@ -33,7 +34,9 @@ class BilliCicle extends Component {
                             <TabHeader label="Excluir" icon="trash-o" target="tabDelete" />
                         </TabsHeader>
                         <TabsContent>
-                            <TabContent id="tabList"><h1>Lista</h1></TabContent>
+                            <TabContent id="tabList">
+                                <List></List>
+                            </TabContent>
                             <TabContent id="tabCreate"><h1>Incluir</h1></TabContent>
                             <TabContent id="tabUpdate"><h1>Alterar</h1></TabContent>
                             <TabContent id="tabDelete"><h1>Deletar</h1></TabContent>
