@@ -11,8 +11,10 @@ import TabsContent from "../common/tab/tabs_content"
 import TabHeader from "../common/tab/tabheder"
 import TabContent from "../common/tab/tabContent"
 import List from "./billingCicleList"
+import BilliCicleForm from "./billingCicleForm"
 
 import { selectTab, showTabs } from "../common/tab/tabActions"
+import { create } from "./billiCicleActions"
 
 class BilliCicle extends Component {
 
@@ -37,7 +39,9 @@ class BilliCicle extends Component {
                             <TabContent id="tabList">
                                 <List></List>
                             </TabContent>
-                            <TabContent id="tabCreate"><h1>Incluir</h1></TabContent>
+                            <TabContent id="tabCreate">
+                                <BilliCicleForm onSubmit={this.props.create} />
+                            </TabContent>
                             <TabContent id="tabUpdate"><h1>Alterar</h1></TabContent>
                             <TabContent id="tabDelete"><h1>Deletar</h1></TabContent>
                         </TabsContent>
@@ -49,6 +53,6 @@ class BilliCicle extends Component {
 }
 
 
-const mapDispatchToProps = dispatch => bindActionCreators({ selectTab, showTabs }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ selectTab, showTabs, create }, dispatch)
 
 export default connect(null, mapDispatchToProps)(BilliCicle)
